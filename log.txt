@@ -1,0 +1,53 @@
+2021-12-10 01:47:39.968  INFO 46624 --- [main] com.example.demo.CheckInfluxApplication  : Starting CheckInfluxApplication using Java 11.0.12 on HpPavilion with PID 46624 (C:\Users\ILYA\IdeaProjects\CheckInflux\target\classes started by Vital in C:\Users\ILYA\IdeaProjects\CheckInflux)
+2021-12-10 01:47:39.977  INFO 46624 --- [main] com.example.demo.CheckInfluxApplication  : No active profile set, falling back to default profiles: default
+2021-12-10 01:47:40.569  INFO 46624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-10 01:47:40.574  INFO 46624 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-10 01:47:40.574  INFO 46624 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-10 01:47:40.616  INFO 46624 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-10 01:47:40.617  INFO 46624 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 596 ms
+2021-12-10 01:47:40.642  INFO 46624 --- [main] com.example.demo.CheckInflux             : StartUP of Application
+2021-12-10 01:47:40.645  INFO 46624 --- [main] com.example.demo.CheckInflux             : Instanse of Influx is created
+2021-12-10 01:47:41.023  INFO 46624 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-10 01:47:41.031  INFO 46624 --- [main] com.example.demo.CheckInfluxApplication  : Started CheckInfluxApplication in 1.343 seconds (JVM running for 1.881)
+2021-12-10 01:47:46.149  INFO 46624 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-12-10 01:47:46.170 ERROR 46624 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:770) ~[spring-boot-2.6.0.jar:2.6.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:751) ~[spring-boot-2.6.0.jar:2.6.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:309) ~[spring-boot-2.6.0.jar:2.6.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301) ~[spring-boot-2.6.0.jar:2.6.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290) ~[spring-boot-2.6.0.jar:2.6.0]
+	at com.example.demo.CheckInfluxApplication.main(CheckInfluxApplication.java:10) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: Expecting a positive number for fields size
+	at org.influxdb.impl.Preconditions.checkPositiveNumber(Preconditions.java:35) ~[influxdb-java-2.22.jar:na]
+	at org.influxdb.dto.Point$Builder.build(Point.java:352) ~[influxdb-java-2.22.jar:na]
+	at com.example.demo.InstanseInflux.writeMeuseremts(InstanseInflux.java:45) ~[classes/:na]
+	at com.example.demo.CheckInflux.run(CheckInflux.java:29) ~[classes/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:767) ~[spring-boot-2.6.0.jar:2.6.0]
+	... 5 common frames omitted
+
+2021-12-10 01:48:37.344  INFO 44240 --- [main] com.example.demo.CheckInfluxApplication  : Starting CheckInfluxApplication using Java 11.0.12 on HpPavilion with PID 44240 (C:\Users\ILYA\IdeaProjects\CheckInflux\target\classes started by Vital in C:\Users\ILYA\IdeaProjects\CheckInflux)
+2021-12-10 01:48:37.347  INFO 44240 --- [main] com.example.demo.CheckInfluxApplication  : No active profile set, falling back to default profiles: default
+2021-12-10 01:48:37.923  INFO 44240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-10 01:48:37.928  INFO 44240 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-10 01:48:37.929  INFO 44240 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-10 01:48:37.969  INFO 44240 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-10 01:48:37.969  INFO 44240 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 587 ms
+2021-12-10 01:48:37.994  INFO 44240 --- [main] com.example.demo.CheckInflux             : StartUP of Application
+2021-12-10 01:48:37.997  INFO 44240 --- [main] com.example.demo.CheckInflux             : Instanse of Influx is created
+2021-12-10 01:48:38.282  INFO 44240 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-10 01:48:38.291  INFO 44240 --- [main] com.example.demo.CheckInfluxApplication  : Started CheckInfluxApplication in 1.207 seconds (JVM running for 1.69)
+2021-12-10 02:33:27.568  INFO 27008 --- [main] com.example.demo.CheckInfluxApplication  : Starting CheckInfluxApplication using Java 11.0.12 on HpPavilion with PID 27008 (C:\Users\ILYA\IdeaProjects\CheckInflux\target\classes started by Vital in C:\Users\ILYA\IdeaProjects\CheckInflux)
+2021-12-10 02:33:27.570  INFO 27008 --- [main] com.example.demo.CheckInfluxApplication  : No active profile set, falling back to default profiles: default
+2021-12-10 02:33:28.116  INFO 27008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-10 02:33:28.122  INFO 27008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-10 02:33:28.122  INFO 27008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-12-10 02:33:28.165  INFO 27008 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-10 02:33:28.165  INFO 27008 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 553 ms
+2021-12-10 02:33:28.198  INFO 27008 --- [main] com.example.demo.CheckInflux             : StartUP of Application
+2021-12-10 02:33:28.202  INFO 27008 --- [main] com.example.demo.CheckInflux             : Instanse of Influx is created
+2021-12-10 02:33:28.519  INFO 27008 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-12-10 02:33:28.528  INFO 27008 --- [main] com.example.demo.CheckInfluxApplication  : Started CheckInfluxApplication in 1.234 seconds (JVM running for 1.864)
