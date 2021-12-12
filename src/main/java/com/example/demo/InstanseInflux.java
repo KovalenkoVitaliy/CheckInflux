@@ -35,17 +35,28 @@ public class InstanseInflux {
     }
 
     public void writeMeuseremts(){
-        Pong response = influxDB.ping();
-        QueryResult queryResult = influxDB.query(new Query(" SELECT count(*) FROM StatusOMS"));
-        System.out.println(queryResult.getResults().get(0).getSeries().get(0).getValues().get(0).get(1));
-        influxDB.write(Point.measurement("StatusOMS")
-                .time(System.currentTimeMillis(), TimeUnit.NANOSECONDS)
-                .tag("statusPing", String.valueOf(response.isGood()))
-                .addField("ResponseTime", System.currentTimeMillis())
-                .build());
+        try {
+            int status = 0;
+            Pong response = influxDB.ping();
+            if (response.isGood() == true) {
+                status = 1;
+            } else {
+                status = 0;
+            }
+            QueryResult queryResult = influxDB.query(new Query(" SELECT count(*) FROM StatusOMS where time >= now() - 5s"));
+            Double records = (Double) queryResult.getResults().get(0).getSeries().get(0).getValues().get(0).get(1);
+            influxDB.write(Point.measurement("Status")
+                    .time(System.currentTimeMillis(), TimeUnit.NANOSECONDS)
+                    .tag("StatusBoolean", String.valueOf(response.isGood()))
+                    .addField("StatusInflux", status)
+                    .addField("CountRecords", records)
+                    .build());
 
-        if (response.getVersion().equalsIgnoreCase("unknown")) {
-            logger.info("INFLUX Error pinging server, STATUS = " + response.isGood());
+            if (response.getVersion().equalsIgnoreCase("unknown")) {
+                logger.info("INFLUX Error pinging server, STATUS = " + response.isGood());
+            }
+        } catch (Exception ex) {
+            logger.info("Error of Influx " + ex);
         }
     }
 
